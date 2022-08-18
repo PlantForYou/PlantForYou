@@ -22,7 +22,11 @@
     </div>
 
     <div class="related" v-if="!loggedIn">
-      <a :href="GOOGLE_AUTH_URL" id="google">
+      <a
+        :href="GOOGLE_AUTH_URL"
+        id="google"
+        title="숙명 구글계정으로 로그인해주세요!"
+      >
         <img src="../assets/google.png" />
       </a>
     </div>
@@ -56,7 +60,7 @@
     </div>
     <ul>
       <li>
-        <RouterLink to="/about"> <span>식물추천</span> </RouterLink>
+        <RouterLink to="/plants/test/start"> <span>식물추천</span> </RouterLink>
       </li>
       <li>
         <RouterLink to="/plants"><span>식물사전</span></RouterLink>
@@ -180,14 +184,16 @@ header {
   height: 100%;
   float: left;
   padding-left: 25px;
-  margin-top: 36px;
+  margin-top: 20px;
 }
 
 .innerHeader .util ul li {
   float: left;
+  margin-top: 10px;
 }
 
 .innerHeader .logo {
+  margin-top: -13px;
   width: 270px;
   line-height: 90px;
   position: absolute;
@@ -203,6 +209,8 @@ header {
 }
 
 .related {
+  margin-top: 4px;
+  margin-right: 14px;
   width: 400px;
   float: right;
 }
@@ -211,7 +219,7 @@ header {
   display: block;
   float: right;
   margin-right: 20px;
-  margin-top: 24px;
+  margin-top: 15px;
   color: white;
 }
 
@@ -280,7 +288,7 @@ header {
   border-radius: 50%;
   background: #1d3a09;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 8px;
 }
 
 .may strong {

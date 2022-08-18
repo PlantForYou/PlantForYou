@@ -22,10 +22,10 @@ public class PlantScore {
     private Long id;
 
     @Column(nullable = false)
-    private Byte sunLevel;
+    private Long sunLevel;
 
     @Column(nullable = false)
-    private Byte hardLevel;
+    private Long hardLevel;
 
     @Column(nullable = false)
     private Boolean isEdible;
@@ -34,5 +34,5 @@ public class PlantScore {
     private Boolean isToxic;
 
     @Column(nullable = false)
-    private Byte sizeLevel;
+    private Long sizeLevel;
 }

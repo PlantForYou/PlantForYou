@@ -2,7 +2,7 @@
 <template>
   <TheDarkHeader></TheDarkHeader>
 
-  <section class="main2">
+  <section class="main2" style="padding: 3% 10%">
     <div class="inner">
       <div class="mainTitle">
         <div class="topBox">
@@ -12,7 +12,7 @@
           </p>
           <div class="bottomBox">
             <span @click="begin"
-              ><img src="../assets/ico_csr.png" style="cursor: pointer"
+              ><img src="@/assets/ico_csr.png" style="cursor: pointer"
             /></span>
           </div>
           <p class="txt" style="color: gray; font-weight: bold">
@@ -33,9 +33,9 @@ export default {
   },
   methods: {
     begin() {
+      this.$store.commit('init')
       this.$router.push({
-        name: 'PlantTestView',
-        params: { id: 1 }
+        name: 'PlantTestView'
       })
     }
   }
@@ -88,7 +88,7 @@ export default {
 .main2 {
   width: 100%;
   height: auto;
-  background-image: url(../assets/main_visual_05.jpg);
+  background-image: url(@/assets/main_visual_05.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

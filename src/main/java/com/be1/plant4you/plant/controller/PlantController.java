@@ -1,14 +1,13 @@
 package com.be1.plant4you.plant.controller;
 
-import com.be1.plant4you.plant.dto.request.PlantScoreRequest;
 import com.be1.plant4you.plant.dto.response.PlantDictListResponse;
 import com.be1.plant4you.plant.dto.response.PlantDictResponse;
+import com.be1.plant4you.plant.dto.response.PlantQuesResponse;
 import com.be1.plant4you.plant.dto.response.PlantScoreResponse;
 import com.be1.plant4you.plant.service.PlantService;
 import io.swagger.annotations.Api;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,8 +22,12 @@ public class PlantController {
 
     @Operation(summary = "식물 mbti 결과 반환", description = "인증되지 않은 이용자도 요청 가능")
     @GetMapping("/mbti")
-    public PlantScoreResponse getPlantScoreResult(@RequestBody @Validated PlantScoreRequest plantScoreRequest) {
-        return plantService.getPlantScoreResult(plantScoreRequest);
+    public PlantScoreResponse getPlantScoreResult(@RequestParam Long sunLevel,
+                                                  @RequestParam Long hardLevel,
+                                                  @RequestParam Boolean isEdible,
+                                                  @RequestParam Boolean isToxic,
+                                                  @RequestParam Long sizeLevel) {
+        return plantService.getPlantScoreResult(sunLevel, hardLevel, isEdible, isToxic, sizeLevel);
     }
 
     @Operation(summary = "식물사전 리스트 조회", description = "일단 인증되지 않은 이용자도 요청 가능")
@@ -37,5 +40,11 @@ public class PlantController {
     @GetMapping("/{plantDictId}")
     public PlantDictResponse getPlantDict(@PathVariable Long plantDictId) {
         return plantService.getPlantDict(plantDictId);
+    }
+
+    @Operation(summary = "식물추천 질문지 조회")
+    @GetMapping("/questions/{plantQuesId}")
+    public PlantQuesResponse getPlantQues(@PathVariable Long plantQuesId) {
+        return plantService.getPlantQues(plantQuesId);
     }
 }

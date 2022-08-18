@@ -18,7 +18,7 @@ public class PlantDictRepositoryImpl implements PlantDictRepositoryCustom {
     private final JPAQueryFactory queryFactory;
 
     @Override
-    public PlantScoreResponse findByPlantScore(Byte sunLevel, Byte hardLevel, Boolean isEdible, Boolean isToxic, Byte sizeLevel) {
+    public PlantScoreResponse findByPlantScore(Long sunLevel, Long hardLevel, Boolean isEdible, Boolean isToxic, Long sizeLevel) {
         return queryFactory
                 .select(
                         Projections.constructor(PlantScoreResponse.class,

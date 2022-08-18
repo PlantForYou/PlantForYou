@@ -17,19 +17,19 @@ public class PlantDictResponse {
     private String name;
 
     @Schema(description = "볕양 레벨", allowableValues = {"1", "2", "3", "4", "5"})
-    private Byte sunAmtLevel;
+    private Long sunAmtLevel;
 
     @Schema(description = "볕양 설명", example = "햇빛을 많이 필요로 합니다.")
     private String sunAmtDesc;
 
     @Schema(description = "난이도 레벨", allowableValues = {"1", "2", "3", "4", "5"})
-    private Byte difficultyLevel;
+    private Long difficultyLevel;
 
     @Schema(description = "난이도 설명", example = "물을 자주 주어야 하므로 난이도가 높은 식물입니다.")
     private String difficultyDesc;
 
     @Schema(description = "사이즈 레벨", allowableValues = {"1", "2", "3", "4", "5"})
-    private Byte sizeLevel;
+    private Long sizeLevel;
 
     @Schema(description = "사이즈 설명", example = "사이즈가 큰 식물이므로 거실이나 베란다에 두어야 합니다.")
     private String sizeDesc;

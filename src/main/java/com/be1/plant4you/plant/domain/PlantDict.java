@@ -31,19 +31,19 @@ public class PlantDict {
     private String name;
 
     @Column(nullable = false)
-    private Byte sunAmtLevel;
+    private Long sunAmtLevel;
 
     @Column(nullable = false, length = 500)
     private String sunAmtDesc;
 
     @Column(nullable = false)
-    private Byte difficultyLevel;
+    private Long difficultyLevel;
 
     @Column(nullable = false, length = 700)
     private String difficultyDesc;
 
     @Column(nullable = false)
-    private Byte sizeLevel;
+    private Long sizeLevel;
 
     @Column(nullable = false, length = 300)
     private String sizeDesc;

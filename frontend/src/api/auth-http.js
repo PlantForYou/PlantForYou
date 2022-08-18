@@ -42,6 +42,7 @@ instance.interceptors.response.use(
         .catch(() => {
           // 재발급하는 과정에서 오류생기면 무조건 재로그인
           store.dispatch('auth/logout')
+          alert('로그인이 필요한 서비스입니다.')
           location.href = '/'
           return
         })

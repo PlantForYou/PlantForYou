@@ -9,7 +9,7 @@
             나의 성격과 라이프스타일, 공간에 딱 맞는 반려식물을 추천해드려요!
             <br />반려식물 MBTI 하러 GOGO!<br />
           </p>
-          <span class="btn" @click="goTestPage">TEST 시작 </span>
+          <span class="btn" @click="goTestPage">TEST 시작</span>
         </div>
       </div>
     </section>
@@ -24,7 +24,9 @@ export default {
   },
   methods: {
     goTestPage() {
-      this.$router.push('/test')
+      this.$router.push({
+        name: 'PlantTestStartView'
+      })
     }
   }
 }

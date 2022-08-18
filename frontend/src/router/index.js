@@ -14,6 +14,9 @@ import NestedTwoView from '@/views/nested/NestedTwoView.vue'
 import NestedHomeView from '@/views/nested/NestedHomeView.vue'
 import PlantListView from '@/views/plants/PlantListView.vue'
 import PlantDetailView from '@/views/plants/PlantDetailView.vue'
+import PlantTestStartView from '@/views/plants/PlantTestStartView.vue'
+import PlantTestView from '@/views/plants/PlantTestView.vue'
+import PlantTestResultView from '@/views/plants/PlantTestResultView.vue'
 
 const routes = [
   {
@@ -29,14 +32,6 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  },
-  {
-    path: '/test',
-    name: 'TestView',
-    component: () =>
-      import(
-        /* webpackChunkName: "test", webpackPrefecth: true */ '../views/TestView.vue'
-      )
   },
   {
     path: '/auth/redirect',
@@ -79,6 +74,21 @@ const routes = [
     path: '/plants/:id',
     name: 'PlantDetail',
     component: PlantDetailView
+  },
+  {
+    path: '/plants/test/start',
+    name: 'PlantTestStartView',
+    component: PlantTestStartView
+  },
+  {
+    path: '/plants/test',
+    name: 'PlantTestView',
+    component: PlantTestView
+  },
+  {
+    path: '/plants/test/result',
+    name: 'PlantTestResultView',
+    component: PlantTestResultView
   },
   {
     path: '/:pathMatch(.*)*',

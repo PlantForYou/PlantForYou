@@ -23,6 +23,7 @@ export default {
       if (accessToken) {
         localStorage.setItem(constant.ACCESS_TOKEN, accessToken)
         localStorage.setItem(constant.REFRESH_TOKEN, refreshToken)
+        this.$store.commit('auth/login')
         location.href = '/'
       } else {
         const error = this.getUrlParameter('error')
