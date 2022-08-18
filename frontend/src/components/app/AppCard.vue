@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" style="cursor: pointer">
     <div v-if="$slots.header" class="card-header">
       <slot name="header"></slot>
     </div>
