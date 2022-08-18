@@ -13,17 +13,33 @@
         </span>
 
         <span style="font-size: 18px">
-          <i class="bi bi-heart" v-if="!post.isLikes" @click="likes"></i>
-          <i class="bi bi-heart-fill" v-if="post.isLikes" @click="unlikes"></i>
+          <i
+            class="bi bi-heart"
+            v-if="!post.isLikes"
+            @click="likes"
+            style="cursor: pointer"
+          ></i>
+          <i
+            class="bi bi-heart-fill"
+            v-if="post.isLikes"
+            @click="unlikes"
+            style="cursor: pointer"
+          ></i>
           <span>&nbsp;{{ post.likes }}</span>
 
           &nbsp;&nbsp;&nbsp;
 
-          <i class="bi bi-bookmark" v-if="!post.isScrap" @click="scrap"></i>
+          <i
+            class="bi bi-bookmark"
+            v-if="!post.isScrap"
+            @click="scrap"
+            style="cursor: pointer"
+          ></i>
           <i
             class="bi bi-bookmark-fill"
             v-if="post.isScrap"
             @click="unscrap"
+            style="cursor: pointer"
           ></i>
           <span>&nbsp;{{ post.scraps }}</span>
         </span>
