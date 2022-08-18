@@ -18,6 +18,7 @@ public class PlantQuesOptionRepositoryImpl implements PlantQuesOptionRepositoryC
     public List<PlantQuesResponse.Option> findAllByPlantQuesId(Long plantQuesId) {
         return queryFactory
                 .select(Projections.constructor(PlantQuesResponse.Option.class,
+                        plantQuesOption.id,
                         plantQuesOption.option,
                         plantQuesOption.score
                 ))

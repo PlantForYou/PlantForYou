@@ -26,6 +26,9 @@ public class PlantQuesResponse {
     @NoArgsConstructor
     public static class Option {
 
+        @Schema(description = "식물추천 질문 선택지 ID", example = "1")
+        private Long plantQuesOptionId;
+
         @Schema(description = "식물추천 질문 선택지", example = "a. 햇볕 잘드는 창가")
         private String option;
 
