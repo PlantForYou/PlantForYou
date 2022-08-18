@@ -22,7 +22,11 @@
     </div>
 
     <div class="related" v-if="!loggedIn">
-      <a :href="GOOGLE_AUTH_URL" id="google">
+      <a
+        :href="GOOGLE_AUTH_URL"
+        id="google"
+        title="숙명 구글계정으로 로그인해주세요!"
+      >
         <img src="../assets/google.png" />
       </a>
     </div>
