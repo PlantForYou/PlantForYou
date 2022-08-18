@@ -3,6 +3,7 @@ package com.be1.plant4you.plant.controller;
 import com.be1.plant4you.plant.dto.request.PlantScoreRequest;
 import com.be1.plant4you.plant.dto.response.PlantDictListResponse;
 import com.be1.plant4you.plant.dto.response.PlantDictResponse;
+import com.be1.plant4you.plant.dto.response.PlantQuesResponse;
 import com.be1.plant4you.plant.dto.response.PlantScoreResponse;
 import com.be1.plant4you.plant.service.PlantService;
 import io.swagger.annotations.Api;
@@ -37,5 +38,11 @@ public class PlantController {
     @GetMapping("/{plantDictId}")
     public PlantDictResponse getPlantDict(@PathVariable Long plantDictId) {
         return plantService.getPlantDict(plantDictId);
+    }
+
+    @Operation(summary = "식물추천 질문지 조회")
+    @GetMapping("/questions/{plantQuesId}")
+    public PlantQuesResponse getPlantQues(@PathVariable Long plantQuesId) {
+        return plantService.getPlantQues(plantQuesId);
     }
 }
