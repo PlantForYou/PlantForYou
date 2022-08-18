@@ -76,12 +76,12 @@ const routes = [
     component: PlantDetailView
   },
   {
-    path: '/plants/test',
+    path: '/plants/test/start',
     name: 'PlantTestStartView',
     component: PlantTestStartView
   },
   {
-    path: '/plants/test/:id',
+    path: '/plants/test',
     name: 'PlantTestView',
     component: PlantTestView
   },

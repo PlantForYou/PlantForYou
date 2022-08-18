@@ -2,7 +2,7 @@
 <template>
   <TheDarkHeader></TheDarkHeader>
 
-  <section class="main2">
+  <section class="main2" style="padding: 3% 10%">
     <div class="inner">
       <div class="mainTitle">
         <div class="topBox">
@@ -35,8 +35,7 @@ export default {
     begin() {
       this.$store.commit('init')
       this.$router.push({
-        name: 'PlantTestView',
-        params: { id: 1 }
+        name: 'PlantTestView'
       })
     }
   }
