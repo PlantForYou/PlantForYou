@@ -2,7 +2,6 @@ package com.be1.plant4you.plant.service;
 
 import com.be1.plant4you.common.exception.CustomException;
 import com.be1.plant4you.plant.domain.PlantQues;
-import com.be1.plant4you.plant.dto.request.PlantScoreRequest;
 import com.be1.plant4you.plant.dto.response.PlantDictListResponse;
 import com.be1.plant4you.plant.dto.response.PlantDictResponse;
 import com.be1.plant4you.plant.dto.response.PlantQuesResponse;
@@ -25,19 +24,12 @@ public class PlantService {
     private final PlantQuesRepository plantQuesRepository;
     private final PlantQuesOptionRepository plantQuesOptionRepository;
 
-    public PlantScoreResponse getPlantScoreResult(PlantScoreRequest plantScoreRequest) {
+    public PlantScoreResponse getPlantScoreResult(Long sunLevel, Long hardLevel, Boolean isEdible, Boolean isToxic, Long sizeLevel) {
         //식용 true, 독성 true 경우 -> 독성 false 변경
-        if (plantScoreRequest.getIsEdible() && plantScoreRequest.getIsToxic()) {
-            plantScoreRequest.setFalseToIsToxic();
+        if (isEdible && isToxic) {
+            isToxic = false;
         }
-
-        return plantDictRepository.findByPlantScore(
-                plantScoreRequest.getSunLevel(),
-                plantScoreRequest.getHardLevel(),
-                plantScoreRequest.getIsEdible(),
-                plantScoreRequest.getIsToxic(),
-                plantScoreRequest.getSizeLevel()
-        );
+        return plantDictRepository.findByPlantScore(sunLevel, hardLevel, isEdible, isToxic, sizeLevel);
     }
 
     public List<PlantDictListResponse> getPlantDictList() {

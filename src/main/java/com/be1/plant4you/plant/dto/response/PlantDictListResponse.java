@@ -17,13 +17,13 @@ public class PlantDictListResponse {
     private String name;
 
     @Schema(description = "볕양 레벨", allowableValues = {"1", "2", "3", "4", "5"})
-    private Byte sunAmtLevel;
+    private Long sunAmtLevel;
 
     @Schema(description = "난이도 레벨", allowableValues = {"1", "2", "3", "4", "5"})
-    private Byte difficultyLevel;
+    private Long difficultyLevel;
 
     @Schema(description = "사이즈 레벨", allowableValues = {"1", "2", "3", "4", "5"})
-    private Byte sizeLevel;
+    private Long sizeLevel;
 
     @Schema(description = "한 줄 기능", example = "공기정화")
     private Func funcHead;
