@@ -60,7 +60,7 @@
     </div>
     <ul>
       <li>
-        <RouterLink to="/about"> <span>식물추천</span> </RouterLink>
+        <RouterLink to="/plants/test"> <span>식물추천</span> </RouterLink>
       </li>
       <li>
         <RouterLink to="/plants"><span>식물사전</span></RouterLink>
