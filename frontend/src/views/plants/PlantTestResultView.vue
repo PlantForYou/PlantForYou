@@ -78,10 +78,8 @@ export default {
   },
   methods: {
     begin() {
-      this.$store.commit('init')
       this.$router.push({
-        name: 'PlantTestView',
-        params: { id: 1 }
+        name: 'PlantTestStartView'
       })
     },
     goPlantDetail(plantDictId) {

@@ -14,6 +14,7 @@ import NestedTwoView from '@/views/nested/NestedTwoView.vue'
 import NestedHomeView from '@/views/nested/NestedHomeView.vue'
 import PlantListView from '@/views/plants/PlantListView.vue'
 import PlantDetailView from '@/views/plants/PlantDetailView.vue'
+import PlantTestMainView from '@/views/plants/PlantTestMainView.vue'
 import PlantTestStartView from '@/views/plants/PlantTestStartView.vue'
 import PlantTestView from '@/views/plants/PlantTestView.vue'
 import PlantTestResultView from '@/views/plants/PlantTestResultView.vue'
@@ -74,6 +75,11 @@ const routes = [
     path: '/plants/:id',
     name: 'PlantDetail',
     component: PlantDetailView
+  },
+  {
+    path: '/plants/test/main',
+    name: 'PlantTestMainView',
+    component: PlantTestMainView
   },
   {
     path: '/plants/test/start',

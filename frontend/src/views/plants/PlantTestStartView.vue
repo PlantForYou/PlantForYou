@@ -1,29 +1,36 @@
-<!-- eslint-disable no-tabs -->
 <template>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+    crossorigin="anonymous"
+  />
+
   <TheDarkHeader></TheDarkHeader>
-
-  <section class="main2" style="padding: 3% 10%">
-    <div class="inner">
-      <div class="mainTitle">
-        <div class="topBox">
-          <p class="tit"><span>Plant for You</span>나를 위한 추천 식물은?</p>
-          <p class="txt" style="font-size: 14pt; font-weight: bold">
-            이젠 혼자 말고, 식물과 함께
-          </p>
-          <div class="bottomBox">
-            <span @click="begin"
-              ><img src="@/assets/ico_csr.png" style="cursor: pointer"
-            /></span>
-          </div>
-          <p class="txt" style="color: gray; font-weight: bold">
-            하트를 눌러주세요!
-          </p>
+  <body style="padding: 5% 10%">
+    <div class="container">
+      <section id="main" class="mx-auto my-5 py-5 px-3">
+        <h1>내 운명의 반려식물은?</h1>
+        <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+          <img src="@/assets/plants.png" alt="mainImage" class="img-fluid" />
         </div>
-      </div>
+        <p>
+          내 운명의 반려식물은 무엇일까? <br />
+          두구두구 나에게 딱맞는 반려식물을 만나보세요!
+        </p>
+        <button type="button" class="btn btn-warning" @click="start">
+          시작하기
+        </button>
+      </section>
     </div>
-  </section>
+  </body>
 </template>
-
 <script>
 import TheDarkHeader from '@/layouts/TheDarkHeader.vue'
 
@@ -32,74 +39,51 @@ export default {
     TheDarkHeader
   },
   methods: {
-    begin() {
+    start() {
       this.$store.commit('init')
-      this.$router.push({
-        name: 'PlantTestView'
-      })
+      this.$router.push({ name: 'PlantTestView' })
     }
   }
 }
 </script>
 
-<style>
-.main2 .topBox {
-  width: 780px;
-  position: absolute;
-  top: 53%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+<style scoped>
+#main {
+  background-color: whitesmoke;
+  width: 80%;
   text-align: center;
+  border-radius: 20px;
+  left: 50%;
+  top: 50%;
 }
 
-.main2 .topBox {
-  font-size: 46px;
-  color: #fff;
-  line-height: 1.3;
-  font-weight: 500;
-  margin-bottom: 25px;
+h1 {
+  font-size: 42px;
+  padding-top: 20px;
 }
 
-.main2 .topBox .tit {
-  border-bottom: 4px solid white;
-  padding-bottom: 23px;
+.container img {
+  padding: 10% 30% 10% 30%;
 }
 
-.main2 .topBox .tit span {
-  display: block;
-  font-weight: 700;
+p {
+  font-size: 23px;
 }
 
-.main2 .topBox .txt {
-  color: #fff;
-  font-size: 17px;
-  line-height: 1.4;
-  letter-spacing: -1px;
-  opacity: 0.8;
-  margin-top: 44px;
-  font-style: italic;
+button {
+  margin-top: 5px;
 }
 
-.main2 .inner .bottomBox {
-  margin-top: 30px;
+.container .main .img-fluid {
+  width: 100px;
+  height: 200px;
 }
 
-/*section main*/
-.main2 {
-  width: 100%;
-  height: auto;
-  background-image: url(@/assets/main_visual_05.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
+body {
+  background-image: url('@/assets/fern-1250903.jpg');
 }
 
-.main2 .inner {
-  width: 1400px;
-  height: 750px;
-  margin: 0 auto;
-  position: relative;
-  color: white;
+* {
+  font-family: 'Cute Font', cursive;
 }
 </style>
