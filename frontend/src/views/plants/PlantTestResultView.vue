@@ -4,7 +4,7 @@
 
     <div style="padding: 5% 10%">
       <div class="d-flex flex-column gap-5" style="text-align: center">
-        <h2 style="font-weight: bold">당신에게 알맞은 식물은?</h2>
+        <h2 style="font-weight: bold">당신의 운명의 반려식물은?</h2>
         <div class="d-flex flex-row justify-content-center">
           <img
             :src="result.imgUrl"
