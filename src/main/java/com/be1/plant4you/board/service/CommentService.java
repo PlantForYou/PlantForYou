@@ -88,4 +88,16 @@ public class CommentService {
         }
         return parent;
     }
+
+    @Transactional
+    public void deleteMyComment() {
+        Long userId = SecurityUtil.getCurrentUserId();
+        List<Comment> myChildCommentList = commentRepository.findAllChildByUserId(userId);
+        commentRepository.deleteAll(myChildCommentList); //내가 쓴 대댓글 삭제
+
+        List<Comment> myParentCommentList = commentRepository.findAllParentByUserId(userId);
+        for (Comment myParentComment : myParentCommentList) {
+            deleteComment(myParentComment.getId()); //내가 쓴 댓글 삭제
+        }
+    }
 }

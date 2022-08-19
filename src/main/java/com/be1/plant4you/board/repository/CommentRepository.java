@@ -29,4 +29,10 @@ public interface CommentRepository extends JpaRepository<Comment, Long>, Comment
     @Modifying
     @Query("delete from Comment cmt where cmt.parent.id is null and cmt.id in :ids")
     void deleteAllParentByIdsIn(@Param("ids") List<Long> ids);
+
+    @Query("select cmt from Comment cmt where cmt.parent is not null and cmt.user.id = :userId")
+    List<Comment> findAllChildByUserId(@Param("userId") Long userId);
+
+    @Query("select cmt from Comment cmt where cmt.parent is null and cmt.user.id = :userId")
+    List<Comment> findAllParentByUserId(@Param("userId") Long userId);
 }

@@ -230,4 +230,35 @@ public class PostService {
         }
         return post;
     }
+
+    @Transactional
+    public void deleteMyPost() {
+        Long userId = SecurityUtil.getCurrentUserId();
+        List<Post> postList = postRepository.findByUserId(userId);
+        for (Post post : postList) {
+            deletePost(post.getId());
+        }
+    }
+
+    @Transactional
+    public void deleteMyLikes() {
+        Long userId = SecurityUtil.getCurrentUserId();
+        List<Post> postList = likesRepository.findAllPostByUserId(userId);
+        for (Post post : postList) {
+            post.minusLikes();
+        }
+
+        likesRepository.deleteAllByUserId(userId);
+    }
+
+    @Transactional
+    public void deleteMyScrap() {
+        Long userId = SecurityUtil.getCurrentUserId();
+        List<Post> postList = scrapRepository.findAllPostByUserId(userId);
+        for (Post post : postList) {
+            post.minusScraps();
+        }
+
+        scrapRepository.deleteAllByUserId(userId);
+    }
 }
