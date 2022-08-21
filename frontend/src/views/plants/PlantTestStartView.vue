@@ -12,8 +12,8 @@
     crossorigin="anonymous"
   />
 
-  <TheDarkHeader></TheDarkHeader>
-  <body style="padding: 5% 10%">
+  <!-- <TheDarkHeader></TheDarkHeader> -->
+  <body style="padding: 10% 10%">
     <div class="container">
       <section id="main" class="mx-auto my-5 py-5 px-3">
         <h1>내 운명의 반려식물은?</h1>
@@ -32,12 +32,12 @@
   </body>
 </template>
 <script>
-import TheDarkHeader from '@/layouts/TheDarkHeader.vue'
+// import TheDarkHeader from '@/layouts/TheDarkHeader.vue'
 
 export default {
-  components: {
-    TheDarkHeader
-  },
+  // components: {
+  //   TheDarkHeader
+  // },
   methods: {
     start() {
       this.$store.commit('init')

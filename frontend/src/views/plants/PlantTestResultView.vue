@@ -1,8 +1,8 @@
 <template>
   <div>
-    <TheDarkHeader></TheDarkHeader>
+    <!-- <TheDarkHeader></TheDarkHeader> -->
 
-    <div style="padding: 5% 10%">
+    <div style="padding: 10% 10%">
       <div class="d-flex flex-column gap-5" style="text-align: center">
         <h2 style="font-weight: bold">당신의 운명의 반려식물은?</h2>
         <div class="d-flex flex-row justify-content-center">
@@ -43,13 +43,13 @@
 </template>
 
 <script>
-import TheDarkHeader from '@/layouts/TheDarkHeader.vue'
+// import TheDarkHeader from '@/layouts/TheDarkHeader.vue'
 import * as plantApi from '@/api/plant'
 
 export default {
-  components: {
-    TheDarkHeader
-  },
+  // components: {
+  //   TheDarkHeader
+  // },
   data() {
     return {
       sunLevel: this.$store.getters.getSunLevel,

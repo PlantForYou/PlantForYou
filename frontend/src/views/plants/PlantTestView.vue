@@ -13,9 +13,9 @@
   />
 
   <div>
-    <TheDarkHeader></TheDarkHeader>
+    <!-- <TheDarkHeader></TheDarkHeader> -->
 
-    <div id="backImg" style="padding: 7% 10% 13% 10%">
+    <div id="backImg" style="padding: 10% 10%">
       <div class="status mx-auto mt-5">
         <div class="statusBar" :style="statusStyle"></div>
       </div>
@@ -48,13 +48,13 @@
 </template>
 
 <script>
-import TheDarkHeader from '@/layouts/TheDarkHeader.vue'
+// import TheDarkHeader from '@/layouts/TheDarkHeader.vue'
 import * as plantApi from '@/api/plant'
 
 export default {
-  components: {
-    TheDarkHeader
-  },
+  // components: {
+  //   TheDarkHeader
+  // },
   data() {
     return {
       plantQuesId: 1,
