@@ -22,6 +22,7 @@
 <br/>
 
 ### API 명세
+https://plantforyou.github.io/PlantForYou/
 <br/>
 <br/>
 
